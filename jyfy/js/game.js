@@ -5,7 +5,7 @@ document.body.appendChild(renderer.view);
 var interactive = !1,
 stage = new PIXI.Stage(0, interactive),
 Titles = function() {
-	this.starttitle = "日本头号战犯已被抓进监狱， 交给你来收拾他们！！！;请勿疲劳暴打小日本~ 手抽不负责！！;习惯性暴揍小日本， 轻松治愈受挫心灵。;爱国不是口号，更是行动， 快来和我一起捅鬼子;痛恨小日本侵犯我们的领土吗？ 报仇的时候来了，根本停不下来， 让你爽到爆！;日本战犯正在准备越狱，快阻止 他们，什么，苍老师也在？！;猛戳日本鬼子的时候 注意不要误伤老师哟;点击屏幕，暴打小日本！ 让你爽到爆！".split(";");
+	this.starttitle = "日本头号战犯已被抓进监狱， 交给你来收拾他们！！！;请勿疲劳暴打小日本~ 手抽不负责！！;习惯性暴揍小日本， 轻松治愈受挫心灵。;小谷约你一起杀鬼子，赢iPhone7;痛恨小日本侵犯我们的领土吗？ 报仇的时候来了，根本停不下来， 让你爽到爆！;日本战犯正在准备越狱，快阻止 他们，什么，苍老师也在？！;猛戳日本鬼子的时候 注意不要误伤老师哟;点击屏幕，暴打小日本！ 让你爽到爆！".split(";");
 	this.endtitle = ["胜似王二小", "强过小兵张嘎", "翻版双枪老太婆", "英雄李向阳归来", "真乃在世李云龙"];
 	this.endratio = [[10, 39], [40, 59], [60, 79], [80, 89], [90, 99]]
 };
@@ -13,7 +13,7 @@ Titles.constructor = Titles;
 Titles.prototype.getStartTitle = function() {
 	var a = this.starttitle.length,
 	a = Math.floor(Math.random() * a);
-	return this.starttitle[a]
+	return this.starttitle[3]
 };
 Titles.prototype.getEndTitle = function() {
 	return 500 > userScore ? 0 : 650 > userScore ? 1 : 800 > userScore ? 2 : 1E3 > userScore ? 3 : 4
@@ -66,7 +66,7 @@ var Cast = function() {
 	this.onstageGUIZI = {};
 	this.onstageGIRL = [];
 	this.GUIZI = [[PIXI.Texture.fromImage("images/renwu/anbei_01.png"), PIXI.Texture.fromImage("images/renwu/anbei_02.png"), 12, 38, 1, 30, 4, 12, "\u5b89\u500d\u664b\u4e09", "\u6211\u7237\u7237\u5c31\u662f\u81ed\u6d41\u6c13\uff0c \u6211\u7238\u4e5f\u662f\uff0c\u6211\u4e00\u5b9a \u8981\u5c06\u6d41\u6c13\u4e8b\u4e1a\u8fdb\u884c \u5230\u5e95\u2026."], [PIXI.Texture.fromImage("images/renwu/dongtiaoyingji_01.png"), PIXI.Texture.fromImage("images/renwu/dongtiaoyingji_02.png"), 12, 42, 4, 31, 5, 15, "\u4e1c\u6761\u82f1\u673a", "\u5f53\u5e74\u6211\u662f\u4f55\u7b49\u7684\u98ce \u5149\uff0c\u5927\u4e1c\u4e9a\u5171\u8363\uff0c \u6b7b\u5566\u6b7b\u5566\u6ef4\u3002\u6211\u4e00 \u5b9a\u4f1a\u56de\u6765\u7684\uff01"], [PIXI.Texture.fromImage("images/renwu/shanben56_01.png"), PIXI.Texture.fromImage("images/renwu/shanben56_02.png"), 10, 30, 1, 20, 3, 3, "\u5c71\u672c\u4e94\u5341\u516d", "\u6211\u5728\u73cd\u73e0\u6e2f\u6253\u98de\u673a \u6253\u5f97\u597d\u723d\uff0c\u6211\u60f3\u98de \u7684\u66f4\u9ad8\uff0c\u66f4\u9ad8\uff0c\u66f4 \u9ad8\uff0c\u66f4\u2026\u2026\u554a\u2026.."], [PIXI.Texture.fromImage("images/renwu/shiyuan_01.png"), PIXI.Texture.fromImage("images/renwu/shiyuan_02.png"), 12, 32, 1, 22, 6, 6, "\u77f3\u539f\u614e\u592a\u90ce", "\u6211\u5de6\u9752\u9f99\u53f3\u767d\u864e\uff0c \u4e2d\u95f4\u5939\u4e2a\u7c73\u8001\u9f20\uff0c \u4e13\u4e1a\u6405\u5c40\u4e00\u8f88\u5b50\uff0c \u904f\u5236\u4e2d\u56fd\u4e0d\u505c\u624b\u3002"], [PIXI.Texture.fromImage("images/renwu/tufei_01.png"), PIXI.Texture.fromImage("images/renwu/tufei_02.png"), 14, 48, 3, 30, 5, 21, "\u571f\u80a5\u539f\u8d24\u4e8c", "\u867d\u7136\u540d\u5b57\u53eb\u571f\u80a5\uff0c \u5176\u5b9e\u662f\u4e2a\u7626\u5e72\u3002\u6211 \u5728\u4e2d\u56fd\u6df7\u7684\u98ce\u751f\u6c34 \u8d77\uff0c\u8c01\u6562\u60f9\u6211\uff1f"], [PIXI.Texture.fromImage("images/renwu/xiaoquan_01.png"), PIXI.Texture.fromImage("images/renwu/xiaoquan_02.png"), -2, 27, -10, 17, -7, 3, "\u5c0f\u6cc9\u7eaf\u4e00\u90ce", "\u6b7b\u76ae\u8d56\u8138\uff0c\u6b7b\u4e0d\u8981 \u8138\u3001\u6b7b\u7f20\u86ee\u6253\u662f\u6211 \u7684\u7279\u957f\uff0c\u65e5\u672c\u4fb5\u7565 \u8fc7\u4e2d\u56fd\u5417\uff0c\u6ca1\u6709\uff01"]];
-	this.GIRL = [[PIXI.Texture.fromImage("images/renwu/bo_01.png"), PIXI.Texture.fromImage("images/renwu/bo_02.png"), 27, 21, 30, -21, 15, 0, "\u6ce2\u591a\u91ce\u7ed3\u8863", "\u5f88\u81ea\u8c6a\u7684\u8ddf\u4f60\u8bf4\uff0c \u4f60\u7684200T\u786c\u76d8\u88ab \u6211\u627f\u5305\u4e86~"], [PIXI.Texture.fromImage("images/renwu/cang_01.png"), PIXI.Texture.fromImage("images/renwu/cang_02.png"), 35, 29, 10, -15, 25, 0, "\u82cd\u4e95\u7a7a", "\u6211\u6765\u7ed9\u4f60\u4eec\u6da8\u6da8\u59ff \u52bf\uff0c\u8bf7\u53eb\u6211\u5fb7\u827a\u53cc \u99a8\u4eba\u6c11\u827a\u672f\u5bb6\uff0c\u4e43 \u4eec\u4e0d\u8981\u518d\u9ed1\u6211\u4e86"], [PIXI.Texture.fromImage("images/renwu/long_01.png"), PIXI.Texture.fromImage("images/renwu/long_02.png"), 35, 30, 25, -12, 25, 0, "\u6cf7\u6cfd\u841d\u62c9", "\u6211\u6f02\u4eae\u5417\uff1f\u6211\u5728\u76d1 \u72f1\u98ce\u4e91\u7b49\u7740\u4f60\u54e6\uff0c \u4f60\u4e00\u5b9a\u8981\u6765\u54e6"]];
+	this.GIRL = [[PIXI.Texture.fromImage("images/renwu/long_01.png"), PIXI.Texture.fromImage("images/renwu/long_02.png"), 27, 21, 30, -21, 15, 0, "香邑溪谷", "\u56fd\u5e86\u6765\u9999\u9091\u6eaa\u8c37\uff0c\u000d\u000a\u4e03\u5929\u4e09\u91cd\u8c6a\u793c\u4efb\u000d\u000a\u4f60\u9886\uff01\u0069\u0050\u0068\u006f\u006e\u0065\u0037\u3001\u000d\u000a\u5341\u56fd\u6e38\u3001\u6700\u9ad8\u0033\u4e07\u000d\u000a\u7684\u8d2d\u623f\u57fa\u91d1\u5728\u5411\u4f60\u000d\u000a\u62db\u624b\u3002\u000d\u000a"], [PIXI.Texture.fromImage("images/renwu/long_01.png"), PIXI.Texture.fromImage("images/renwu/long_02.png"), 27, 21, 30, -21, 15, 0, "\u56fd\u5e86\u6765\u9999\u9091\u6eaa\u8c37\uff0c\u000d\u000a\u4e03\u5929\u4e09\u91cd\u8c6a\u793c\u4efb\u000d\u000a\u4f60\u9886\uff01\u0069\u0050\u0068\u006f\u006e\u0065\u0037\u3001\u000d\u000a\u5341\u56fd\u6e38\u3001\u6700\u9ad8\u0033\u4e07\u000d\u000a\u7684\u8d2d\u623f\u57fa\u91d1\u5728\u5411\u4f60\u000d\u000a\u62db\u624b\u3002\u000d\u000a"], [PIXI.Texture.fromImage("images/renwu/long_01.png"), PIXI.Texture.fromImage("images/renwu/long_02.png"), 27, 21, 30, -21, 15, 0, "香邑溪谷", "\u56fd\u5e86\u6765\u9999\u9091\u6eaa\u8c37\uff0c\u000d\u000a\u4e03\u5929\u4e09\u91cd\u8c6a\u793c\u4efb\u000d\u000a\u4f60\u9886\uff01\u0069\u0050\u0068\u006f\u006e\u0065\u0037\u3001\u000d\u000a\u5341\u56fd\u6e38\u3001\u6700\u9ad8\u0033\u4e07\u000d\u000a\u7684\u8d2d\u623f\u57fa\u91d1\u5728\u5411\u4f60\u000d\u000a\u62db\u624b\u3002\u000d\u000a"]];
 	this.SHOWTIME = [[800, 400, 240, 140], [900, 800, 700, 600], [1500, 1E3, 800, 600]]
 };
 Cast.constructor = Cast;
@@ -329,7 +329,7 @@ restartbutton.position.x = 90;
 restartbutton.position.y = 710;
 restartbutton.setInteractive(!0);
 restartbutton.mousedown = restartbutton.touchstart = function() {
-	GAME.game.start()
+	GAME.game.start();
 };
 var fenxiangbutton = PIXI.Sprite.fromImage("images/fenxiang_btn.jpg");
 fenxiangbutton.position.x = 335;
@@ -338,7 +338,8 @@ fenxiangbutton.setInteractive(!0);
 fenxiangbutton.mousedown = fenxiangbutton.touchstart = function() {
 	//this.scale.x = .9;
 	//this.scale.y = .9
-	clickMore();
+	//clickMore();
+	dp_share();
 };
 fenxiangbutton.mouseup = fenxiangbutton.touchend = function() {
 	//this.scale.x = 1;
